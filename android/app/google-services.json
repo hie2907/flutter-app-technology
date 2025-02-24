@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "112677768152",
+    "project_id": "technologgy-equidment",
+    "storage_bucket": "technologgy-equidment.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:112677768152:android:5c5d543079274859ef40ad",
+        "android_client_info": {
+          "package_name": "com.example.techonology_equipment"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXyEBrO0NSUAOSb0uhEFLHj8j5Tm7vlQI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:112677768152:android:8261a1ba77524da0ef40ad",
+        "android_client_info": {
+          "package_name": "com.example.test2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXyEBrO0NSUAOSb0uhEFLHj8j5Tm7vlQI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
