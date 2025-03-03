@@ -1,10 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:overlay_support/overlay_support.dart';
+import 'package:techonology_equipment/routes/app_routes.dart';
 import 'package:techonology_equipment/services/api.dart';
 import 'package:get/get.dart'; // Import GetX
-import 'package:techonology_equipment/views/home/bindings/home_binding.dart';
-import 'package:techonology_equipment/views/home/home_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,14 +26,8 @@ class MyApp extends StatelessWidget {
           primaryColor: const Color(0xFF1a237e),
           useMaterial3: true,
         ),
-        initialRoute: '/',
-        getPages: [
-          GetPage(
-            name: '/',
-            page: () => HomePage(),
-            binding: HomeBinding(),
-          ),
-        ],
+        initialRoute: AppRoutes.homePage,
+        getPages: AppRoutes.routes,
       ),
     );
   }

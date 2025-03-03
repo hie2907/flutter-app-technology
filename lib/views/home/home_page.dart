@@ -4,6 +4,7 @@ import 'package:techonology_equipment/views/home/widgets/home_carousel.dart';
 import 'package:techonology_equipment/views/home/widgets/product_section.dart';
 import 'package:techonology_equipment/widgets/custom_app_bar.dart';
 import 'package:get/get.dart';
+import 'package:techonology_equipment/widgets/custom_bottom_bar.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -36,7 +37,7 @@ class HomePage extends StatelessWidget {
           ),
           Obx(() {
             if (apiController.products.isEmpty) {
-              return SliverToBoxAdapter(
+              return const SliverToBoxAdapter(
                 child: Center(
                   child: CircularProgressIndicator(),
                 ),
@@ -56,7 +57,7 @@ class HomePage extends StatelessWidget {
           ),
           Obx(() {
             if (apiController.cameraProducts.isEmpty) {
-              return SliverToBoxAdapter(
+              return const SliverToBoxAdapter(
                 child: Center(
                   child: CircularProgressIndicator(),
                 ),
@@ -93,6 +94,14 @@ class HomePage extends StatelessWidget {
           }),
         ],
       ),
+      bottomNavigationBar: Obx(() {
+        return CustomBottomNavigationBar(
+          currentIndex: apiController.currentIndex.value,
+          onTap: (index) {
+            apiController.currentIndex.value = index;
+          },
+        );
+      }),
     );
   }
 
