@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:overlay_support/overlay_support.dart';
 import 'package:techonology_equipment/routes/app_routes.dart';
 import 'package:techonology_equipment/services/api.dart';
-import 'package:get/get.dart'; // Import GetX
+import 'package:get/get.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,7 +18,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return OverlaySupport.global(
-      // Đảm bảo rằng OverlaySupport.global bao bọc toàn bộ ứng dụng
       child: GetMaterialApp(
         title: 'PhongVu App',
         debugShowCheckedModeBanner: false,
@@ -26,8 +25,9 @@ class MyApp extends StatelessWidget {
           primaryColor: const Color(0xFF1a237e),
           useMaterial3: true,
         ),
-        initialRoute: AppRoutes.homePage,
+        initialRoute: AppRoutes.mainPage,
         getPages: AppRoutes.routes,
+        // home: MainLayout(),
       ),
     );
   }

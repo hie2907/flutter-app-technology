@@ -8,7 +8,7 @@ class Api {
   Future<void> init1() async {
     await _firebaseMess.requestPermission();
     _firebaseMess.getToken().then((token) {
-      print('Token: $token');
+      // print('Token: $token');
     });
 
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {

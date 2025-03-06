@@ -2,106 +2,100 @@ import 'package:flutter/material.dart';
 import 'package:techonology_equipment/controllers/homeController.dart';
 import 'package:techonology_equipment/views/home/widgets/home_carousel.dart';
 import 'package:techonology_equipment/views/home/widgets/product_section.dart';
-import 'package:techonology_equipment/widgets/custom_app_bar.dart';
+
 import 'package:get/get.dart';
-import 'package:techonology_equipment/widgets/custom_bottom_bar.dart';
+import 'package:techonology_equipment/widgets/custom_app_bar.dart';
 
 class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
-    final Homecontroller apiController = Get.find<Homecontroller>();
-
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: const CustomAppBar(),
-      body: CustomScrollView(
-        slivers: [
-          const SliverToBoxAdapter(
-            child: HomeCarousel(),
-          ),
-          const SliverToBoxAdapter(
-            child: SizedBox(height: 20),
-          ),
-          SliverToBoxAdapter(
-            child: SizedBox(
-              height: 120,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                children: _buildPromotionCards(),
-              ),
+    final Homecontroller apiController = Get.put(Homecontroller());
+    return CustomScrollView(
+      slivers: [
+        const SliverAppBar(
+          flexibleSpace: CustomAppBar(),
+          floating: true,
+          snap: true,
+        ),
+        const SliverToBoxAdapter(
+          child: HomeCarousel(),
+        ),
+        const SliverToBoxAdapter(
+          child: SizedBox(height: 20),
+        ),
+        SliverToBoxAdapter(
+          child: SizedBox(
+            height: 120,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              children: _buildPromotionCards(),
             ),
           ),
-          const SliverToBoxAdapter(
-            child: SizedBox(height: 20),
-          ),
-          Obx(() {
-            if (apiController.products.isEmpty) {
-              return const SliverToBoxAdapter(
-                child: Center(
-                  child: CircularProgressIndicator(),
-                ),
-              );
-            } else {
-              return SliverToBoxAdapter(
-                child: ProductSection(
-                  title: 'LAPTOP',
-                  backgroundColor: const Color(0xFFFFB6C1),
-                  products: apiController.products,
-                ),
-              );
-            }
-          }),
-          const SliverToBoxAdapter(
-            child: SizedBox(height: 10),
-          ),
-          Obx(() {
-            if (apiController.cameraProducts.isEmpty) {
-              return const SliverToBoxAdapter(
-                child: Center(
-                  child: CircularProgressIndicator(),
-                ),
-              );
-            } else {
-              return SliverToBoxAdapter(
-                child: ProductSection(
-                  title: 'CAMERA',
-                  backgroundColor: const Color(0xFF1a237e),
-                  products: apiController.cameraProducts,
-                ),
-              );
-            }
-          }),
-          const SliverToBoxAdapter(
-            child: SizedBox(height: 10),
-          ),
-          Obx(() {
-            if (apiController.accessoryProducts.isEmpty) {
-              return const SliverToBoxAdapter(
-                child: Center(
-                  child: CircularProgressIndicator(),
-                ),
-              );
-            } else {
-              return SliverToBoxAdapter(
-                child: ProductSection(
-                  title: 'THIẾT BỊ',
-                  backgroundColor: const Color(0xFFFFB6C1),
-                  products: apiController.accessoryProducts,
-                ),
-              );
-            }
-          }),
-        ],
-      ),
-      bottomNavigationBar: Obx(() {
-        return CustomBottomNavigationBar(
-          currentIndex: apiController.currentIndex.value,
-          onTap: (index) {
-            apiController.currentIndex.value = index;
-          },
-        );
-      }),
+        ),
+        const SliverToBoxAdapter(
+          child: SizedBox(height: 20),
+        ),
+        Obx(() {
+          if (apiController.products.isEmpty) {
+            return const SliverToBoxAdapter(
+              child: Center(
+                child: CircularProgressIndicator(),
+              ),
+            );
+          } else {
+            return SliverToBoxAdapter(
+              child: ProductSection(
+                title: 'LAPTOP',
+                backgroundColor: const Color(0xFFFFB6C1),
+                products: apiController.products,
+              ),
+            );
+          }
+        }),
+        const SliverToBoxAdapter(
+          child: SizedBox(height: 10),
+        ),
+        Obx(() {
+          if (apiController.cameraProducts.isEmpty) {
+            return const SliverToBoxAdapter(
+              child: Center(
+                child: CircularProgressIndicator(),
+              ),
+            );
+          } else {
+            return SliverToBoxAdapter(
+              child: ProductSection(
+                title: 'CAMERA',
+                backgroundColor: const Color(0xFF1a237e),
+                products: apiController.cameraProducts,
+              ),
+            );
+          }
+        }),
+        const SliverToBoxAdapter(
+          child: SizedBox(height: 10),
+        ),
+        Obx(() {
+          if (apiController.accessoryProducts.isEmpty) {
+            return const SliverToBoxAdapter(
+              child: Center(
+                child: CircularProgressIndicator(),
+              ),
+            );
+          } else {
+            return SliverToBoxAdapter(
+              child: ProductSection(
+                title: 'THIẾT BỊ',
+                backgroundColor: const Color(0xFFFFB6C1),
+                products: apiController.accessoryProducts,
+              ),
+            );
+          }
+        }),
+      ],
     );
   }
 

@@ -4,10 +4,10 @@ import 'package:techonology_equipment/services/api_services.dart';
 import 'package:dio/dio.dart' as dio;
 
 class Homecontroller extends GetxController {
-  var currentIndex = 0.obs;
   var products = <Product>[].obs;
   var cameraProducts = <Product>[].obs;
   var accessoryProducts = <Product>[].obs;
+
   final ApiService apiService = ApiService();
 
   @override
