@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:techonology_equipment/views/payments/personal_payment.dart';
+import 'package:techonology_equipment/routes/app_routes.dart';
 import 'package:techonology_equipment/views/personal/widgets/personal_menu_item.dart';
 import 'package:get/get.dart';
 
@@ -68,7 +68,7 @@ class PersonalPage extends StatelessWidget {
                   icon: Icons.money_outlined,
                   title: 'Thanh toán',
                   onTap: () {
-                    Get.to(() => const PersonalPayment());
+                    Get.toNamed(AppRoutes.addPaymentPage);
                   },
                 ),
                 MenuItem(
