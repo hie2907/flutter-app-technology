@@ -17,7 +17,9 @@ class PersonalPage extends StatelessWidget {
             width: double.infinity,
             child: Center(
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.toNamed(AppRoutes.loginPage);
+                },
                 style: ElevatedButton.styleFrom(
                   foregroundColor: const Color(0xFF2A4BA0),
                   minimumSize: const Size(300, 60),
