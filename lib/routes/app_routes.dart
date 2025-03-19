@@ -4,8 +4,8 @@ import 'package:techonology_equipment/utils/binding/main_binding.dart';
 import 'package:techonology_equipment/views/home/bindings/home_binding.dart';
 import 'package:techonology_equipment/views/home/home_page.dart';
 import 'package:techonology_equipment/views/payments/payment_screens/add_payment_screen.dart';
-import 'package:techonology_equipment/views/payments/personal_payment.dart';
-import 'package:techonology_equipment/views/payments/personal_payment_binding.dart';
+import 'package:techonology_equipment/views/payments/payment_page.dart';
+import 'package:techonology_equipment/views/payments/payment_binding.dart';
 import 'package:techonology_equipment/widgets/custom_main_layout.dart';
 
 class AppRoutes {
@@ -28,8 +28,8 @@ class AppRoutes {
     ),
     GetPage(
       name: paymentManagerPage,
-      page: () => const PersonalPayment(),
-      binding: PersonalPaymentBinding(),
+      page: () => const PaymentPage(),
+      binding: PaymentBinding(),
     ),
     GetPage(
       name: addPaymentPage,

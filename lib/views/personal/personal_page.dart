@@ -68,7 +68,7 @@ class PersonalPage extends StatelessWidget {
                   icon: Icons.money_outlined,
                   title: 'Thanh toán',
                   onTap: () {
-                    Get.toNamed(AppRoutes.addPaymentPage);
+                    Get.toNamed(AppRoutes.paymentManagerPage);
                   },
                 ),
                 MenuItem(
