@@ -1,16 +1,18 @@
-# techonology_equipment
+# 🛍️ Technology Equipment
 
-A new Flutter project.
+![505781260_716397854421472_1070148994072938891_n](https://github.com/user-attachments/assets/b87025f1-c931-4618-b8ba-ebd142e74dd9)
+![505781260_716397854421472_1070148994072938891_n](https://github.com/user-attachments/assets/b87025f1-c931-4618-b8ba-ebd142e74dd9)
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+Một trang web đơn giản hiển thị danh sách sản phẩm công nghệ bằng cách gọi API.  
 
-A few resources to get you started if this is your first Flutter project:
+## 🚀 Tính Năng
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Hiển thị danh sách sản phẩm công nghệ (laptop, điện thoại, phụ kiện...)
+- Gọi API để lấy dữ liệu sản phẩm
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🔧 Công Nghệ Sử Dụng
+
+- **Back-end**: Laravel + API 
+- **Mobile**: Flutter
+
